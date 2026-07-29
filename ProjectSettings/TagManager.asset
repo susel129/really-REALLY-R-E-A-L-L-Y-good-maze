@@ -3,12 +3,16 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Floor
+  - Ice
+  - APAP
+  - Mud
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Chodzownica
   - Water
   - UI
   - 

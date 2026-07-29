@@ -28,7 +28,7 @@ public class GugulToFirma : MonoBehaviour
         xRotation = -MYSZy;
         xRotation = Mathf.Clamp(xRotation, -130f, 130f);
         yRotation = MYSZx;
-        yRotation = Mathf.Clamp(yRotation, -360f, 360f);
+        //yRotation = Mathf.Clamp(yRotation, -360f, 360f);
 
         transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
         Humanoid.Rotate(Vector3.up * MYSZx);
