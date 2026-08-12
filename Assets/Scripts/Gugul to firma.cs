@@ -20,19 +20,24 @@ public class GugulToFirma : MonoBehaviour
         Humanoid = transform.parent;
     }
 
-    void CameraRotation()
+    private void CameraRotation()
     {
-        float MYSZx = Input.GetAxis("Mouse X") * CzulaMyszka;
-        float MYSZy = Input.GetAxis("Mouse Y") * CzulaMyszka;
+        float mouseX =
+            Input.GetAxis("Mouse X") * CzulaMyszka * Time.deltaTime;
 
-        xRotation = -MYSZy;
-        xRotation = Mathf.Clamp(xRotation, -130f, 130f);
-        yRotation = MYSZx;
-        //yRotation = Mathf.Clamp(yRotation, -360f, 360f);
+        float mouseY =
+            Input.GetAxis("Mouse Y") * CzulaMyszka * Time.deltaTime;
 
-        transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
-        Humanoid.Rotate(Vector3.up * MYSZx);
-    }   
+
+        xRotation -= mouseY;
+
+
+        xRotation = Mathf.Clamp(xRotation, -90f, 90f);
+
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
+
+        Humanoid.Rotate(Vector3.up * mouseX);
+    }
 
 
     // Useless Text

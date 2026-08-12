@@ -1,4 +1,4 @@
-using System.Collections;
+Ôªøusing System.Collections;
 using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
@@ -13,6 +13,19 @@ public class APAP : MonoBehaviour
     [SerializeField] float speed = 12f;
     Vector3 Fefofity;
     CharacterController CCC;
+
+    private void OnControllerColliderHit(ControllerColliderHit other)
+    {
+        if (other.gameObject.tag == "Podnoszacz")
+        {
+            other.gameObject.GetComponent<Og√≥lne≈ªare≈Çko>().Zapapiono();
+        }
+    }
+
+
+
+
+
     // Useless Text
     void Start()
     {
@@ -27,7 +40,7 @@ public class APAP : MonoBehaviour
         Vector3 movement = transform.right * x + transform.forward * z;
         CCC.Move(movement * speed * Time.deltaTime);
 
-        if (Physics.Raycast(Duolingo.position, //If you didn't you're spain lesson, –ÒÜ ÜµrÒ ﬂÂ¢k (Duoling.position == behind you)
+        if (Physics.Raycast(Duolingo.position, //If you didn't you're spain lesson, √ê√∞√±‚Ä† ‚Ä†¬µr√± √ü√•¬¢k (Duoling.position == behind you)
 
       transform.TransformDirection(Vector3.down),
         out Heat, 0.4f, MaskaAnyAPAPOWAuselessowa))
