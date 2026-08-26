@@ -1,15 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Xml.Serialization;
 using UnityEngine;
 
 public class PortalTeleport : MonoBehaviour
 {
 
-    public Transform player;
-    public Transform receiver;
+    public Transform player; // Gdzie jest gracz?
+    public Transform receiver; // Gdzie jest portal?
     
     private bool playerIsOverlapping = false;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
@@ -26,29 +26,31 @@ public class PortalTeleport : MonoBehaviour
     }
 
 
-    void Apapejszyn()
+    void Teleportation()
     {
-        if (playerIsOverlapping)
+        if (playerIsOverlapping == true)
         {
-            Vector3 PTP = player.position - transform.position;
-            float doProduct = Vector3.Dot(transform.up, PTP);
-            if (doProduct < 0f)
+            Vector3 portalToPlayer = player.position - transform.position;
+            float dotProduct = Vector3.Dot(transform.up, portalToPlayer);
+            if (dotProduct < 0f)
             {
                 float rotationDiff = Quaternion.Angle(transform.rotation, receiver.rotation);
                 rotationDiff += 180;
                 player.Rotate(Vector3.up, rotationDiff);
 
-                Vector3 positionOffset = Quaternion.Euler(0f, rotationDiff, 0f) * PTP;
+                Vector3 positionOffset = Quaternion.Euler(0f, rotationDiff, 0f) * portalToPlayer;
                 player.position = receiver.position;
+
+                playerIsOverlapping = false;
             }
         }
-
-        void FixedUpdate()
-        {
-            Apapejszyn();
-        }
     }
-    
+
+    private void FixedUpdate()
+    {
+        Teleportation();
+    }
+
+
+
 }
-
-
