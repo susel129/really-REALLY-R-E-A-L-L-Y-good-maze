@@ -12,9 +12,9 @@ public class GameManager : MonoBehaviour
     bool BRAVOyOUaTEaPAP = false;
 
     public int Food = 0;
-    public int APAP = 0;
-    public int APAPnoc = 0;
-    public int APAPextra = 0;
+    public int ReversalRed = 0;
+    public int LapseBlue = 0;
+    public int HollowPurple = 0;
 
     public void MehrEssen(int ZEIT)
     {
@@ -117,9 +117,9 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("Actual time: " + ZeitZumSchloss);
             Debug.Log("ESSEN: " + Food);
-            Debug.Log("AQUIRED APAP NOC, APAP NOC AMOUNT: " + APAPnoc);
-            Debug.Log("AQUIRED APAP, APAP AMOUNT: " + APAP);
-            Debug.Log("AQUIRED APAP EXTRA, APAP EXTRA AMOUNT: " + APAPextra);
+            Debug.Log("AQUIRED HOLLOW PURPLE, PURPLE AMOUNT: " + HollowPurple);
+            Debug.Log("AQUIRED RED, RED AMOUNT: " + ReversalRed);
+            Debug.Log("AQUIRED BLUE, BLUE AMOUNT: " + LapseBlue);
         }
     }
 
