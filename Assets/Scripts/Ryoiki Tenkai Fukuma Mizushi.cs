@@ -1,5 +1,6 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RyoikiTenkaiFukumaMizushi : MonoBehaviour
@@ -35,15 +36,25 @@ public class RyoikiTenkaiFukumaMizushi : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && ChimeraShadowGarden && InfiniteVoid )
         {
             Debug.Log("SCREW YOU! *Unjogos you're Jogo");
+            MelovelentShrine.SetBool("KageBunshinNoJutsu", KUKUTSUYOUREJAISEN());
+        }
+    }
+
+    public void KageBunshinNoJutsu()
+    {
+        foreach (PrzedmiotDrzwioodporny TajūKageBunshinNoJutsu in RyoikiTenkai)
+        {
+            TajūKageBunshinNoJutsu.Open();
         }
     }
 
     public bool KUKUTSUYOUREJAISEN()
     {
-        if (GameManager.Instance.ReversalRed > 0)
+        if (GameManager.Instance.ReversalRed > 0) 
         {
             GameManager.Instance.ReversalRed--;
             Debug.Log("Narrator: The Bummest of today, Okkotsu Yuta, Just summoned rika and left her to fight alone");
+            ChimeraShadowGarden = true;
             return true;
         }
         else
