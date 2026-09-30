@@ -41,7 +41,7 @@ public class GugulToFirma : MonoBehaviour
 
 
     // Useless Text
-    void FixedUpdate()
+    void Update()
     {
         CameraRotation();
     }
