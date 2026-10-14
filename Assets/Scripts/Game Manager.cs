@@ -1,11 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using static KukutsuJaisen;
 
 public class GameManager : MonoBehaviour
 {
 
-    public static GameManager Instance;
+    public static GameManager INSTANCJA;
     [SerializeField] int ZeitZumSchloss;
     bool iDunnoMaybeeeeeAPAP = false;
     bool iToldYaToEatAPAPnOWyOUREdEAD = false;
@@ -36,9 +39,9 @@ public class GameManager : MonoBehaviour
     // Usless Text like Useless Miwa
     void Start()
     {
-        if (Instance == null)
+        if (INSTANCJA == null)
         {
-            Instance = this;
+            INSTANCJA = this;
         }
 
         if (ZeitZumSchloss <= 0)
@@ -99,15 +102,20 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void ScwipinwIwHawd()
+    public Text FrickinLoserLMFAO;
+    public GameObject Byakugan;
+
+    public void ScwipinwIwHawd()
     {
         if (BRAVOyOUaTEaPAP)
         {
-            Debug.Log("HELL, YOU WON");
+            FrickinLoserLMFAO.text = "CURSE YOU!"; 
+            Debug.Log("FRICK, YOU WON");
         }
         else
         {
-            Debug.Log("SKILLISSUE LMAOOOOOOOO");
+            FrickinLoserLMFAO.text = "Frickin' Loser LMFAO";
+            Debug.Log("SKILLISSUE LMFAOOOOOOOO");
         }
     }
 
@@ -129,5 +137,37 @@ public class GameManager : MonoBehaviour
         einApapNacht();
         
         APAPnoC();
+    }
+
+    public Text SuperMegaTextI;
+    public Text SuperMegaTextII;
+    public Text SuperMegaTextIII;
+
+    public void KillSorcererEqualsEarningPointWELLLLLLLLTheseAreTheCullingGamesRules(int OKARUN)
+    {
+
+        Food += OKARUN;
+    }
+
+    public void WIECEJCZASU(int AvadaCadavra)
+    {
+        ZeitZumSchloss += AvadaCadavra;
+    }
+
+    public void Bigos(KukutsuJaisenn MultipleShadowCloneJutsu)
+    {
+        if (MultipleShadowCloneJutsu == KukutsuJaisenn.JujutsuKaisen)
+        {
+            LapseBlue++;
+        }
+        else if (MultipleShadowCloneJutsu == KukutsuJaisenn.KukutsuJaisen)
+        {
+            ReversalRed++;
+        }
+        else if (MultipleShadowCloneJutsu == KukutsuJaisenn.JukutsuJaisen)
+        {
+            HollowPurple++;
+        }
+
     }
 }

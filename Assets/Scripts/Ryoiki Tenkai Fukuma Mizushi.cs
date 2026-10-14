@@ -50,9 +50,9 @@ public class RyoikiTenkaiFukumaMizushi : MonoBehaviour
 
     public bool KUKUTSUYOUREJAISEN()
     {
-        if (GameManager.Instance.ReversalRed > 0) 
+        if (GameManager.INSTANCJA.ReversalRed > 0) 
         {
-            GameManager.Instance.ReversalRed--;
+            GameManager.INSTANCJA.ReversalRed--;
             Debug.Log("Narrator: The Bummest of today, Okkotsu Yuta, Just summoned rika and left her to fight alone");
             ChimeraShadowGarden = true;
             return true;

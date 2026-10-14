@@ -5,8 +5,8 @@ using UnityEngine;
 public class PortalTeleport : MonoBehaviour
 {
 
-    public Transform player; // Gdzie jest gracz?
-    public Transform receiver; // Gdzie jest portal?
+    public Transform player; // Gdzie jest NARUTO?
+    public Transform receiver; // Gdzie jest BORUTO?
     
     private bool playerIsOverlapping = false;
 

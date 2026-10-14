@@ -12,14 +12,14 @@ public class PrzedmiotDrzwioodporny : MonoBehaviour
     float speed = 5;
 
 
-    // Start is called before the first frame update
+    // Start is called when Naruto uses Rasengan
     void Start()
     {
         door.position = closePosition.position;
     }
 
 
-    // Update is called once per frame
+    // Update is called when Naruto Says Dattebayo
     private void Update()
     {
         if (open && Vector3.Distance(door.position, openPosition.position) > 0.001f)

@@ -8,7 +8,7 @@ public class Pieróg : OgólneŻarełko
 
     public override void Zapapiono()
     {
-        GameManager.Instance.MehrEssen(ESSEN);
+        GameManager.INSTANCJA.MehrEssen(ESSEN);
         Debug.Log("ALEALEALEALEALEALEALEALE ALE ALE ALE  ALE  ALE  ALE   ALE podniosłeś pickup 👍");
         Destroy(this.gameObject);
     }

@@ -8,7 +8,7 @@ public class ibuprommaxsprint : OgólneŻarełko
 
     public override void Zapapiono()
     {
-        GameManager.Instance.MehrZEIT(ZEIT);
+        GameManager.INSTANCJA.MehrZEIT(ZEIT);
         Debug.Log("ALEALEALEALEALEALEALEALE ALE ALE ALE  ALE  ALE  ALE   ALE podniosłeś pickup 👍");
         Destroy(this.gameObject);
     }
